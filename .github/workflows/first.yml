@@ -23,7 +23,8 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v4.1.7
-      - uses: ./.github/workflows/second.yml
+      - name: Run a one-line script
+        uses: ./.github/workflows/second.yml
         with:
           var1: 'shubham'
           var2: true
