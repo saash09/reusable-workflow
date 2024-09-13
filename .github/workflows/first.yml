@@ -22,8 +22,6 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: gitclone
-        run: git clone https://github.com/Shubham-Bawa/resuseormultipleworkflowfiles.git
       - name: Run a one-line script
         uses: ./.github/workflows/second.yml
         with:
