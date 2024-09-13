@@ -18,6 +18,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
       - name: demo-setp 
         run: echo 'printing name ${{inputs.var1}}'
   test2:
