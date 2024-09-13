@@ -1,0 +1,13 @@
+name: Call Reusable Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  invoke-reusable-workflow:
+    uses: ./.github/workflows/reusable-build.yml  # Call the reusable workflow
+    with:
+      var1: '16'     
+      var2: true  
