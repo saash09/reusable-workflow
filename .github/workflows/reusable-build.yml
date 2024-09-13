@@ -1,0 +1,26 @@
+name: Reusable Build Workflow
+
+on:
+  workflow_call:
+    inputs:
+      var1:
+        description: 'Node.js version to use'
+        required: true
+        type: string
+      var2:
+        description: 'Run tests after build'
+        required: false
+        default: true
+        type: boolean
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+        if: ${{ inputs.run-tests == 'true' }}
+      - name: test  
+        run: echo "hello world ${{inputs.var1}}"
