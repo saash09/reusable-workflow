@@ -1,0 +1,30 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  workflow_call:
+    inputs:
+      var1:
+        description: ' add the name value'
+        required: true
+        type: string
+      var2: 
+        description: 'boolean type value'
+        required: true
+        type: boolean
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: demo-setp 
+        run: echo 'printing name ${{inputs.var1}}'
+  test2:
+    runs-on: ubuntu-latest
+    if: ${{inputs.var1}} == true
+    steps:
+      - name: demo-setp 
+        run: echo 'printing name ${{inputs.var1}}'
+
+ 
